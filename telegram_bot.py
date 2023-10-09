@@ -39,13 +39,15 @@ while True:
     timestamp_pattern = r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})'
     timestamp_match = re.search(timestamp_pattern, log_data)
     timestamp_log_data = ''
+    print('timestamp_log_data start')
     if timestamp_match:
         timestamp_log_data = timestamp_match.group(1)
+        print(f'masuk if match{timestamp_log_data}')
 
     current_time = time.strftime('%Y-%m-%d %H:%M:%S')
     print('outside if \n')
     print(f'global_timestamp = {global_timestamp} | timestamp log data = {timestamp_log_data}')
-    if global_timestamp is None and global_timestamp != timestamp_log_data:
+    if global_timestamp is None or global_timestamp != timestamp_log_data:
         print('masuk try')
         try:
             print(f'global_timestamp = {global_timestamp} | timestamp log data = {timestamp_log_data}')
@@ -104,3 +106,6 @@ while True:
             global_timestamp = timestamp_log_data
         except:
             print("Cannot retrieve data in error.log")
+
+    else:
+        time.sleep(10)
