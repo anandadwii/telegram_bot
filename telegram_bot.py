@@ -32,8 +32,6 @@ detected_attacks = {
 bot_token = "6250732185:AAENk18TZSe3W47v4dQ_P9jOVIXdHRX6EdQ"
 bot_chatID = "1041111909"
 
-Application.builder().token(bot_token).read_timeout(15).get_updates_read_timeout(20).build()
-
 global_timestamp = None
 while True:
     # Baca log kesalahan Apache
