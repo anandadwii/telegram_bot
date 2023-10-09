@@ -45,9 +45,12 @@ while True:
         timestamp_log_data = timestamp_match.group(1)
 
     current_time = time.strftime('%Y-%m-%d %H:%M:%S')
-
+    print('outside if \n')
+    print(f'global_timestamp = {global_timestamp} | timestamp log data = {timestamp_log_data}')
     if global_timestamp is None and global_timestamp != timestamp_log_data:
+        print('masuk try')
         try:
+            print(f'global_timestamp = {global_timestamp} | timestamp log data = {timestamp_log_data}')
             # Identifikasi serangan SQL Injection
             if "SQL syntax error" in log_data and not detected_attacks["SQL Injection"]:
 
